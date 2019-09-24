@@ -1,11 +1,11 @@
 import React from 'react'
 
-const GameBoardStatus = () => {
+const GameStatusBoard = () => {
     return (
         <div>
-            
+
         </div>
     )
 }
 
-export default GameBoardStatus
+export default GameStatusBoard

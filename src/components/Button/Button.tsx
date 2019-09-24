@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction, FunctionComponent } from 'react'
+import './Button.scss'
 
-const Button = () => {
+interface ButtonPropTypes {
+    btnText: string;
+    onClickAction: () => any | Dispatch<SetStateAction<any>>;
+}
+
+const Button: FunctionComponent<ButtonPropTypes> = ({ btnText, onClickAction }) => {
     return (
-        <div>
-
-        </div>
+        <button className='Button' onClick={() => { onClickAction() }}>
+            {btnText}
+        </button>
     )
 }
 
