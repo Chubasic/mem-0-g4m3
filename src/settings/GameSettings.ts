@@ -4,6 +4,7 @@ export default class GameSettings implements IGameSettings {
     constructor(
         readonly level = 1,
         readonly score = 0,
-        readonly gameTime = '00:00') {
+        readonly gameTime = '00:00',
+        readonly totalLevels = 3) {
     }
 }
