@@ -13,10 +13,11 @@ const GameBoard = () => {
     const boardSize = useSelector(getBoardSize);
     const [board, setBoard] = useState<Array<number>>([])
     useEffect(() => {
+        console.log(boardSize)
         setBoard(boardInit(boardSize));
         return () => {
         };
-    }, [])
+    }, [boardSize])
     return (
         <div className='GameBoard'>
             {board.map((element: number) => {

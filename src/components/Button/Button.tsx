@@ -8,7 +8,7 @@ interface ButtonPropTypes {
 
 const Button: FunctionComponent<ButtonPropTypes> = ({ btnText, onClickAction }) => {
     return (
-        <button className='Button' onClick={() => { onClickAction() }}>
+        <button className='Button' onClick={onClickAction}>
             {btnText}
         </button>
     )

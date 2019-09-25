@@ -7,7 +7,7 @@ const initialState: IGameSettings = {
     totalMatches: 0,
     board: {
         memorizedMatches: 0,
-        boardSize: 4
+        boardSize: 0
     }
 }
 

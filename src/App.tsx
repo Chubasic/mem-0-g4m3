@@ -4,6 +4,7 @@ import GameStatusBoard from './containers/GameStatusBoard/GameStatusBoard';
 import './App.scss';
 import { useDispatch } from 'react-redux';
 import GameSettings from './settings/GameSettings';
+import Button from './components/Button/Button';
 
 const App: FunctionComponent = () => {
   const initStore = useDispatch();
@@ -13,10 +14,14 @@ const App: FunctionComponent = () => {
     };
   }, [])
 
+  function intiAction() {
+    initStore({ type: 'INIT_LEVEL', payload: new GameSettings() });
+  }
+
   return (
     <div className='App'>
       <h1>MEMO GAME</h1>
-      <button onClick={() => { initStore({ type: 'INIT_LEVEL', payload: new GameSettings() }) }}>Start game</button>
+      <Button btnText='Start game' onClickAction={intiAction} />
       <div className='content'>
         <GameBoard />
         <GameStatusBoard />
