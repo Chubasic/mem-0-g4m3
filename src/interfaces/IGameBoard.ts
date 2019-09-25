@@ -1,5 +1,5 @@
-import ObjectIndex from './ObjectIndex';
-export default interface IGameBoard extends ObjectIndex {
+import StringObjectIndex from './StringObjectIndex';
+export default interface IGameBoard extends StringObjectIndex {
     memorizedMatches: number;
-    boardSize: [number, number];
+    boardSize: number;
 }

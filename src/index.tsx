@@ -5,10 +5,18 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
+import reducers from './store/reducers/reducer';
 import * as serviceWorker from './serviceWorker';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import * as actionCreators from './store/actions/actions';
 
+const composeEnhancers = composeWithDevTools({ actionCreators, trace: true, traceLimit: 25 });
 
-const store = createStore(combineReducers(reducers), applyMiddleware(thunk));
+const store = createStore(
+    combineReducers({ reducers }),
+    composeEnhancers(
+        applyMiddleware(thunk)
+    ));
 
 ReactDOM.render(
     <Provider store={store}>

@@ -1,0 +1,10 @@
+.Card {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    margin: 10px;
+
+    &:hover {
+        box-shadow: 4px 4px 10px yellow;
+    }
+}

@@ -1,5 +1,4 @@
-const timer = () => {
+export const timer = () => {
 
 }
 
-export default timer;

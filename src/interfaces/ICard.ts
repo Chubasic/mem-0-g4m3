@@ -1,6 +1,7 @@
-import ObjectIndex from './ObjectIndex';
-export default interface ICard extends ObjectIndex {
+import StringObjectIndex from './StringObjectIndex';
+
+export default interface ICard extends StringObjectIndex {
     type: number;
-    img: string;
+    backgroundColor: string;
     hidden: boolean;
 }

@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
+import './Card.scss';
 
-const Card = () => {
+interface CardPropTypes {
+    backgroundColor: string;
+}
+
+const Card: FunctionComponent<CardPropTypes> = ({ backgroundColor }) => {
     return (
-        <div>
+        <div className='Card' style={{ backgroundColor }}>
 
         </div>
     )
