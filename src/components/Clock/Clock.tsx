@@ -8,33 +8,34 @@ interface ClockPropTypes {
 const Clock: FunctionComponent<ClockPropTypes> = ({ deadline }) => {
     const [time, setTime] = useState({ minutes: 0, seconds: 0 });
     useEffect(() => {
-        //doesnt work
+        // doesnt work
         function timeEnded() {
             const { minutes, seconds } = time;
             if (!minutes && !seconds) {
-                clearInterval(interval)
+                clearInterval(interval);
             }
         }
         function levelTimer() {
-            if (deadline)
+            if (deadline) {
                 setTime(
                     timer(deadline)
                 );
+            }
             timeEnded();
         }
 
-        let interval = setInterval(() => levelTimer(), 100);
+        const interval = setInterval(() => levelTimer(), 100);
         return () => {
             clearInterval(interval);
         };
-    }, [deadline, time])
+    }, [deadline, time]);
 
     return (
         <TextItem {...{
-            headingText: "Time",
+            headingText: 'Time',
             text: `0${time.minutes}:${time.seconds}`
         }} />
-    )
-}
+    );
+};
 
-export default Clock
+export default Clock;

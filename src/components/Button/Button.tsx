@@ -1,5 +1,5 @@
-import React, { Dispatch, SetStateAction, FunctionComponent } from 'react'
-import './Button.scss'
+import React, { Dispatch, SetStateAction, FunctionComponent } from 'react';
+import './Button.scss';
 
 interface ButtonPropTypes {
     btnText: string;
@@ -11,7 +11,7 @@ const Button: FunctionComponent<ButtonPropTypes> = ({ btnText, onClickAction }) 
         <button className='Button' onClick={onClickAction}>
             {btnText}
         </button>
-    )
-}
+    );
+};
 
-export default Button
+export default Button;

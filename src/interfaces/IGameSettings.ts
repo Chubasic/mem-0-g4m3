@@ -6,5 +6,5 @@ export default interface IGameSettings extends StringObjectIndex {
     levelTime: number;
     readonly totalLevels: number;
     readonly totalMatches: number;
-    board: IGameBoard
+    board: IGameBoard;
 }

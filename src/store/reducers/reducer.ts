@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions/actionTypes'
+import * as actionTypes from '../actions/actionTypes';
 import IStore from '../../interfaces/IStore';
 const initialState: IStore = {
     level: 0,
@@ -12,12 +12,12 @@ const initialState: IStore = {
         memorizedMatches: 0,
         boardSize: 0
     },
-}
+};
 
 export default (state = initialState, { type, payload }: any) => {
     switch (type) {
         case actionTypes.INIT_LEVEL:
-            return { ...state, ...payload, memorizedCards: [] }
+            return { ...state, ...payload, memorizedCards: [] };
 
         case actionTypes.CONFIRM_MATCH:
             return {
@@ -25,14 +25,14 @@ export default (state = initialState, { type, payload }: any) => {
                 memorizedMatches: state.board.memorizedMatches++,
                 compare: [],
                 score: state.score + 150
-            }
+            };
 
         case actionTypes.NO_MATCH:
             return {
                 ...state,
                 memorizedCards: [...payload],
                 compare: []
-            }
+            };
 
         case actionTypes.NEXT_LEVEL:
             return {
@@ -41,16 +41,16 @@ export default (state = initialState, { type, payload }: any) => {
                 level: ++state.level,
                 score: state.score,
                 memorizedCards: []
-            }
+            };
 
         case actionTypes.SELECT_CARD:
             return {
                 ...state,
                 compare: [...state.compare, payload.compare],
                 memorizedCards: [...payload.memorizedCards]
-            }
+            };
 
         default:
-            return state
+            return state;
     }
-}
+};

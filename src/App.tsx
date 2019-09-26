@@ -12,7 +12,7 @@ const App: FunctionComponent = () => {
 
     return () => {
     };
-  }, [])
+  }, []);
 
   function intiAction() {
     initGame({ type: 'INIT_LEVEL', payload: new GameSettings() });
@@ -28,6 +28,6 @@ const App: FunctionComponent = () => {
       </div>
     </div>
   );
-}
+};
 
 export default App;

@@ -14,12 +14,12 @@ const GameBoard = () => {
     const currentLevel = useSelector(getCurrentLevel);
     const selectedCards = useSelector(getMemorizedCards);
     const gameBoardActions = useDispatch();
-    const [board, setBoard] = useState<Array<number>>([]);
+    const [board, setBoard] = useState<number[]>([]);
     useEffect(() => {
         setBoard(boardInit(boardSize));
         return () => {
         };
-    }, [boardSize, currentLevel])
+    }, [boardSize, currentLevel]);
 
     function selectCard(cardType: number, cardIndex: number): void {
         gameBoardActions({
@@ -41,10 +41,10 @@ const GameBoard = () => {
                             false : true
                     }
                     id={index}
-                    key={uuid.v4()} />)
+                    key={uuid.v4()} />);
             })}
         </div>
-    )
-}
+    );
+};
 
-export default GameBoard
+export default GameBoard;

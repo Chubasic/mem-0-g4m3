@@ -38,16 +38,16 @@ const GameStatusBoard = () => {
         return () => {
 
         };
-    }, [compare, nextLevel])
+    }, [compare, nextLevel]);
 
 
     return (
         <div className='GameStatusBoard'>
-            <TextItem {...{ headingText: "Level", text: `${levelData.level}/${levelData.totalLevels}` }} />
-            <TextItem {...{ headingText: "Score", text: levelData.score.toString() }} />
+            <TextItem {...{ headingText: 'Level', text: `${levelData.level}/${levelData.totalLevels}` }} />
+            <TextItem {...{ headingText: 'Score', text: levelData.score.toString() }} />
             <Clock deadline={levelData.levelTime} />
         </div>
-    )
-}
+    );
+};
 
-export default GameStatusBoard
+export default GameStatusBoard;

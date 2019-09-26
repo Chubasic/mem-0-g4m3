@@ -1,7 +1,7 @@
 import IStore from '../../interfaces/IStore';
 
 const getMemorizedCards = ({ reducers: { memorizedCards } }: IStore) =>
-    memorizedCards
+    memorizedCards;
 
 
-export default getMemorizedCards;    
+export default getMemorizedCards;

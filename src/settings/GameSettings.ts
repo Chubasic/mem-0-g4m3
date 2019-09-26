@@ -1,5 +1,5 @@
-import IGameSettings from "../interfaces/IGameSettings";
-import IGameBoard from "../interfaces/IGameBoard";
+import IGameSettings from '../interfaces/IGameSettings';
+import IGameBoard from '../interfaces/IGameBoard';
 
 export default class GameSettings implements IGameSettings {
     constructor(

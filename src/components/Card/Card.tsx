@@ -23,7 +23,7 @@ const Card: FunctionComponent<CardPropTypes> = ({
                 { backgroundColor: '#4d1933' } :
                 { backgroundColor }} />
 
-    )
-}
+    );
+};
 
-export default Card
+export default Card;

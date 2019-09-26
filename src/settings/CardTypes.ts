@@ -4,6 +4,6 @@ const cardTypes: NumberObjectIndex = {
     2: 'salmon',
     3: 'darkkhaki',
     4: 'grey',
-}
+};
 
 export default cardTypes;

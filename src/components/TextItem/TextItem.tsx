@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react';
 import './TextItem.scss';
 
 interface TextItemPropTypes {
@@ -11,7 +11,7 @@ const TextItem: FunctionComponent<TextItemPropTypes> = ({ headingText, text }) =
         <div className='TextItem'>
             <h4>{headingText}: <p>{text}</p></h4>
         </div>
-    )
-}
+    );
+};
 
-export default TextItem
+export default TextItem;
