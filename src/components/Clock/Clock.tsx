@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FunctionComponent } from 'react'
+import React, { useEffect, useState, FunctionComponent } from 'react';
 import { timer } from '../../util';
 import TextItem from '../TextItem/TextItem';
 interface ClockPropTypes {

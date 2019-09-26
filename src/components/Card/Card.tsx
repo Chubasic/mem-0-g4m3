@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react';
 import ICard from '../../interfaces/ICard';
 import './Card.scss';
 import '../../animations/flip.scss';

@@ -1,6 +1,6 @@
 export const boardInit = (boardSize: number) => {
     return shuffle([...Array(boardSize)]
-        .map((element: number, index: number) => {
+        .map((_: any, index: number) => {
             return [...Array<number>(boardSize).fill(++index)]
         }).flat());
 
