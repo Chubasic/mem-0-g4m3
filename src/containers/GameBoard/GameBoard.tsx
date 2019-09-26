@@ -1,26 +1,47 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { getBoardSize, getCurrentLevel } from '../../store/selectors/gameBoard';
+import getMemorizedCards from '../../store/selectors/memorizedCards';
+import * as actionTypes from '../../store/actions/actionTypes';
 import uuid from 'node-uuid';
 import Card from '../../components/Card/Card';
-import IGameSettings from '../../interfaces/IGameSettings';
 import { boardInit } from '../../util/';
 import cardTypes from '../../settings/CardTypes';
 import './GameBoard.scss';
 
 const GameBoard = () => {
-    const getBoardSize = ({
-        reducers: { board: { boardSize } } }: IGameSettings) => { return boardSize }
     const boardSize = useSelector(getBoardSize);
-    const [board, setBoard] = useState<Array<number>>([])
+    const currentLevel = useSelector(getCurrentLevel);
+    const selectedCards = useSelector(getMemorizedCards);
+    const gameBoardActions = useDispatch();
+    const [board, setBoard] = useState<Array<number>>([]);
     useEffect(() => {
         setBoard(boardInit(boardSize));
         return () => {
         };
-    }, [boardSize])
+    }, [boardSize, currentLevel])
+
+    function selectCard(cardType: number, cardIndex: number): void {
+        gameBoardActions({
+            type: actionTypes.SELECT_CARD,
+            payload: { compare: cardType, memorizedCards: [...selectedCards, cardIndex] }
+        });
+
+    }
+
     return (
         <div className='GameBoard'>
-            {board.map((element: number) => {
-                return (<Card backgroundColor={cardTypes[element]} key={uuid.v4()} />)
+            {board.map((element: number, index: number) => {
+                return (<Card
+                    clickAction={selectCard}
+                    backgroundColor={cardTypes[element]}
+                    type={element}
+                    hidden={
+                        selectedCards.includes(index) ?
+                            false : true
+                    }
+                    id={index}
+                    key={uuid.v4()} />)
             })}
         </div>
     )

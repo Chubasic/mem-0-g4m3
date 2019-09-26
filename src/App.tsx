@@ -7,7 +7,7 @@ import GameSettings from './settings/GameSettings';
 import Button from './components/Button/Button';
 
 const App: FunctionComponent = () => {
-  const initStore = useDispatch();
+  const initGame = useDispatch();
   useEffect(() => {
 
     return () => {
@@ -15,7 +15,7 @@ const App: FunctionComponent = () => {
   }, [])
 
   function intiAction() {
-    initStore({ type: 'INIT_LEVEL', payload: new GameSettings() });
+    initGame({ type: 'INIT_LEVEL', payload: new GameSettings() });
   }
 
   return (

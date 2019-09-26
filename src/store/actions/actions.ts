@@ -12,4 +12,10 @@ export const nextLevel = (payload: any) => ({
     payload
 })
 
+// export const selectCard = (payload: any) => ({
+//     type: actionTypes.SELECT_CARD,
+//     payload
+// })
+
+
 
