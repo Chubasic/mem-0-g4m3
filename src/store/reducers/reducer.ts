@@ -5,6 +5,7 @@ const initialState: IGameSettings = {
     score: 0,
     totalLevels: 0,
     totalMatches: 0,
+    levelTime: 0,
     board: {
         memorizedMatches: 0,
         boardSize: 0
