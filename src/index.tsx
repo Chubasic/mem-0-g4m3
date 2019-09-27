@@ -8,9 +8,8 @@ import App from './App';
 import reducers from './store/reducers/reducer';
 import * as serviceWorker from './serviceWorker';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import * as actionCreators from './store/actions/actions';
 
-const composeEnhancers = composeWithDevTools({ actionCreators, trace: true, traceLimit: 25 });
+const composeEnhancers = composeWithDevTools({ trace: true, traceLimit: 25 });
 
 const store = createStore(
     combineReducers({ reducers }),
