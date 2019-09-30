@@ -8,6 +8,7 @@ import TextItem from '../../components/TextItem/TextItem';
 import './GameStatusBoard.scss';
 import GameSettings from '../../settings/GameSettings';
 
+
 const GameStatusBoard = () => {
     const levelData = useSelector(getLevelData);
     const compare = useSelector(getSelected);
@@ -42,6 +43,7 @@ const GameStatusBoard = () => {
 
 
     return (
+
         <div className='GameStatusBoard'>
             <TextItem {...{ headingText: 'Level', text: `${levelData.level}/${levelData.totalLevels}` }} />
             <TextItem {...{ headingText: 'Score', text: levelData.score.toString() }} />

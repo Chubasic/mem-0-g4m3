@@ -5,7 +5,7 @@ import '../../animations/flip.scss';
 
 interface CardPropTypes extends ICard {
     id: number;
-    clickAction: (type: number, itemIndex: number) => any;
+    clickAction?: (type: number, itemIndex: number) => any;
 }
 
 const Card: FunctionComponent<CardPropTypes> = ({
@@ -16,7 +16,11 @@ const Card: FunctionComponent<CardPropTypes> = ({
     clickAction }) => {
     return (
         <div
-            onClick={() => clickAction(type, id)}
+            onClick={() => {
+                if(clickAction) {
+                    clickAction(type, id);
+                }
+            }}
             id={id.toString()}
             className={`Card ${!hidden ? 'flip-bl' : 'flip-tr'}`}
             style={hidden ?

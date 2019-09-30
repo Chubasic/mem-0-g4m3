@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
+import './Menu.scss';
 
-const Menu = () => {
+interface MenuPropTypes {
+    headingText: string;
+    children: JSX.Element[] | JSX.Element;
+}
+
+const Menu: FunctionComponent<MenuPropTypes> = ({ headingText, children }) => {
     return (
-        <div>
-
+        <div className='Menu'>
+            <h2>{headingText}</h2>
+            <div>
+                {children}
+            </div>
         </div>
     );
 };

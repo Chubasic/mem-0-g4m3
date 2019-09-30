@@ -32,12 +32,13 @@ const GameBoard = () => {
     return (
         <div className='GameBoard'>
             {board.map((element: number, index: number) => {
+                const cardSelected = selectedCards.includes(index);
                 return (<Card
-                    clickAction={selectCard}
+                    clickAction={ !cardSelected ? selectCard : undefined }
                     backgroundColor={cardTypes[element]}
                     type={element}
                     hidden={
-                        selectedCards.includes(index) ?
+                       cardSelected ?
                             false : true
                     }
                     id={index}

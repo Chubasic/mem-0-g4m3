@@ -1,13 +1,16 @@
 import IStore from '../../interfaces/IStore';
 
+
 const getBoardSize = ({
-    reducers: { board: { boardSize } } }: IStore) => boardSize;
+    gameReducer: { board: { boardSize } } }: IStore) => boardSize;
 
 
-const getCurrentLevel = ({ reducers: { level } }: IStore) => level;
+const getCurrentLevel = ({ gameReducer: { level } }: IStore) => level;
 
 
 export {
     getBoardSize,
     getCurrentLevel
 };
+
+

@@ -1,6 +1,6 @@
 import IStore from '../../interfaces/IStore';
 
-const getMemorizedCards = ({ reducers: { memorizedCards } }: IStore) =>
+const getMemorizedCards = ({ gameReducer: { memorizedCards } }: IStore) =>
     memorizedCards;
 
 

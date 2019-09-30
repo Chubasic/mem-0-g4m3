@@ -14,7 +14,7 @@ const initialState: IStore = {
     },
 };
 
-export default (state = initialState, { type, payload }: any) => {
+export const gameReducer = (state = initialState, { type, payload }: any) => {
     switch (type) {
         case actionTypes.INIT_LEVEL:
             return { ...state, ...payload, memorizedCards: [] };

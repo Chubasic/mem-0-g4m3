@@ -1,21 +1,24 @@
+
 import IStore from '../../interfaces/IStore';
 
 
-const getSelected = ({ reducers: { compare } }: IStore) => {
+const getSelected = ({ gameReducer: { compare } }: IStore) => {
     return compare;
 };
 
-const getLevelStatus = ({ reducers: { board: { memorizedMatches }, totalMatches } }: IStore) => {
+const getLevelStatus = ({ gameReducer: { board: { memorizedMatches }, totalMatches } }: IStore) => {
     return totalMatches ? memorizedMatches === totalMatches : false;
 };
 
 const getLevelData = ({
-    reducers: { level, score, totalLevels, levelTime } }: IStore) => ({ level, score, totalLevels, levelTime });
+    gameReducer: { level, score, totalLevels, levelTime } }: IStore) => ({ level, score, totalLevels, levelTime });
+
+
 
 
 
 export {
     getSelected,
     getLevelData,
-    getLevelStatus
+    getLevelStatus,
 };
