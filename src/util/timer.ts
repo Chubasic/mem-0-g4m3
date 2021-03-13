@@ -4,5 +4,3 @@ export const timer = (deadline: number) => {
     const minutes = Math.floor((time / 1000 / 60) % 60);
     return { seconds, minutes };
 };
-
-

@@ -1,3 +1,4 @@
+
 import React, { Dispatch, FunctionComponent } from 'react';
 import './Button.scss';
 
@@ -20,3 +21,4 @@ const Button: FunctionComponent<ButtonPropTypes> = ({ btnText, onClickAction, di
 };
 
 export default Button;
+
