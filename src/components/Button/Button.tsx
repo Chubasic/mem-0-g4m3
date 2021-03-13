@@ -1,11 +1,24 @@
-import React from 'react'
 
-const Button = () => {
-    return (
-        <div>
+import React, { Dispatch, FunctionComponent } from 'react';
+import './Button.scss';
 
-        </div>
-    )
+interface ButtonPropTypes {
+    btnText: string;
+    onClickAction: (a?: any) => any | Dispatch<any>;
+    dispatchAction?: string;
 }
 
-export default Button
+
+const Button: FunctionComponent<ButtonPropTypes> = ({ btnText, onClickAction, dispatchAction }) => {
+    function handleCkick() {
+        onClickAction(dispatchAction);
+    }
+    return (
+        <button className='Button' onClick={handleCkick}>
+            {btnText}
+        </button>
+    );
+};
+
+export default Button;
+

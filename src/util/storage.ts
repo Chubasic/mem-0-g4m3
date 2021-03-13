@@ -1,23 +1,24 @@
-import IGameSettings from "../interfaces/IGameSettings";
+import IGameSettings from '../interfaces/IGameSettings';
+
+// This module stands for saving game progress in local storage
 
 export const storageManager = {
     addItems: (data: IGameSettings): void => {
-        Object.keys(data).forEach((key) => {
-            localStorage.setItem(key, data[key])
-        })
+        localStorage.setItem('save', JSON.stringify(data));
     },
 
     readStorage: (): IGameSettings => {
-        return Object.keys(localStorage)
-            .reduce<IGameSettings>((accumulator: IGameSettings, key: string): any => {
-                accumulator[key] = localStorage.getItem(key);
-                return accumulator;
-            }, {} as IGameSettings)
+        const save = localStorage.getItem('save');
+        return !!save ? JSON.parse(save) : undefined;
     },
 
     clearStorage: (): void => {
-        localStorage.clear()
+        localStorage.clear();
+    },
+
+    checkStorage(): boolean {
+        return localStorage.length > 0;
     }
 
-}
+};
 Object.freeze(storageManager);

@@ -1,6 +1,11 @@
-import ObjectIndex from './ObjectIndex';
-export default interface IGameSettings extends ObjectIndex {
+
+import IGameBoard from './IGameBoard';
+import StringObjectIndex from './StringObjectIndex';
+export default interface IGameSettings extends StringObjectIndex {
     level: number;
     score: number;
-    gameTime: string | '00:00';
+    levelTime: number;
+    readonly totalLevels: number;
+    readonly totalMatches: number;
+    board: IGameBoard;
 }
