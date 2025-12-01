@@ -1,21 +1,20 @@
 import React from 'react';
+import { composeWithDevTools } from '@redux-devtools/extension';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import './index.css';
-import App from './App';
-import {gameReducer} from './store/reducers/reducer';
+import { gameReducer } from './store/reducers/reducer';
 import * as serviceWorker from './serviceWorker';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { Provider } from 'react-redux';
+import App from './App';
+import './index.css';
 
 const composeEnhancers = composeWithDevTools({ trace: true, traceLimit: 25 });
 
 const store = createStore(
     combineReducers({ gameReducer }),
-    composeEnhancers(
-        applyMiddleware(thunk)
-    ));
+    composeWithDevTools(
+        applyMiddleware(thunk)));
 
 ReactDOM.render(
     <Provider store={store}>
