@@ -7,7 +7,7 @@ export const storageManager = {
         localStorage.setItem('save', JSON.stringify(data));
     },
 
-    readStorage: (): IGameSettings => {
+    readStorage: (): IGameSettings | undefined => {
         const save = localStorage.getItem('save');
         return !!save ? JSON.parse(save) : undefined;
     },

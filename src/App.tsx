@@ -1,20 +1,15 @@
 
 import React, { FunctionComponent, useEffect } from 'react';
-import GameBoard from './containers/GameBoard/GameBoard';
-import GameStatusBoard from './containers/GameStatusBoard/GameStatusBoard';
-import './App.scss';
 import { useDispatch } from 'react-redux';
-import GameSettings from './settings/GameSettings';
 import Button from './components/Button/Button';
+import GameBoard from './containers/GameBoard/GameBoard';
 import GameManager from './containers/GameManager/GameManager';
+import GameStatusBoard from './containers/GameStatusBoard/GameStatusBoard';
+import GameSettings from './settings/GameSettings';
+import './App.scss';
 
 const App: FunctionComponent = () => {
   const initGame = useDispatch();
-  useEffect(() => {
-
-    return () => {
-    };
-  }, []);
 
   function intiAction() {
     initGame({ type: 'INIT_LEVEL', payload: new GameSettings() });

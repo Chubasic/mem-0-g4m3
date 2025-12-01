@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getBoardSize, getCurrentLevel } from '../../store/selectors/gameBoard';
 import getMemorizedCards from '../../store/selectors/memorizedCards';
 import * as actionTypes from '../../store/actions/actionTypes';
-import uuid from 'node-uuid';
+import { v4 as uuid } from 'uuid';
 import Card from '../../components/Card/Card';
 import { boardInit } from '../../util/';
 import cardTypes from '../../settings/CardTypes';
@@ -34,15 +34,15 @@ const GameBoard = () => {
             {board.map((element: number, index: number) => {
                 const cardSelected = selectedCards.includes(index);
                 return (<Card
-                    clickAction={ !cardSelected ? selectCard : undefined }
+                    clickAction={!cardSelected ? selectCard : undefined}
                     backgroundColor={cardTypes[element]}
                     type={element}
                     hidden={
-                       cardSelected ?
+                        cardSelected ?
                             false : true
                     }
                     id={index}
-                    key={uuid.v4()} />);
+                    key={uuid()} />);
             })}
         </div>
     );
